@@ -1,0 +1,13 @@
+{
+  "name": "angular-lessjs",
+  "version": "0.1.0",
+  "main": "dist/angular-lessjs.js",
+  "ignore": [
+    "**/.*",
+    "lib",
+    "*.md",
+    "LICENSE",
+    "Gruntfile.js",
+    "*.json"
+  ]
+}
