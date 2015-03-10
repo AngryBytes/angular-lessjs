@@ -12,10 +12,14 @@ function($window, $q, $http, $templateCache) {
         return true;
     };
 
-    fm.loadFile = function(filename, currentDirectory) {
+    fm.getUrlForFilenameAndDirectory = function(filename, currentDirectory) {
         if (currentDirectory && !this.isPathAbsolute(filename))
             filename = currentDirectory + filename;
-        filename = this.extractUrlParts(filename, $window.location.href).url;
+        return this.extractUrlParts(filename, $window.location.href).url;
+    };
+
+    fm.loadFile = function(filename, currentDirectory) {
+        filename = this.getUrlForFilenameAndDirectory(filename, currentDirectory);
         return $http.get(filename, {
             cache: $templateCache,
             transformResponse: []
